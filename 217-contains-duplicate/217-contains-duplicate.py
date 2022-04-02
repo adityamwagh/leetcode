@@ -1,13 +1,16 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        dic = {}
-        for num in nums:
-            if num not in dic:
-                dic[num] = 1
-            else:
-                dic[num] += 1
-            
-            if dic[num] > 1:
-                return True
         
+        hmap = {}
+        
+        for num in nums:
+            if num in hmap.keys():
+                hmap[num] +=1
+            else:
+                hmap[num] = 1
+        
+        for key, val in hmap.items():
+            if val > 1:
+                return True
+            
         return False
