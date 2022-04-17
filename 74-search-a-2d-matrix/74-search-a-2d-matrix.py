@@ -31,8 +31,7 @@ class Solution:
         m, n = len(matrix), len(matrix[0])
         
         for i in range(m):
-            isPresent = self.binarySearch(matrix[i], target)
-            if isPresent:
+            if self.binarySearch(matrix[i], target):
                 return True
             
         return False
