@@ -28,8 +28,7 @@ class Solution:
                 
 #         return False
         
-        m, n = len(matrix), len(matrix[0])
-        
+        m = len(matrix)
         for i in range(m):
             isPresent = self.binarySearch(matrix[i], target)
             if isPresent:
