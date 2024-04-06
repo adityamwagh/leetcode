@@ -1,17 +1,20 @@
-            if not stack: 
-            if count%2 != 0 and n == count //2:
-            print('val: ',val,' index: ',n,' stack: '   ,stack)
-                continue
-                n += 1
-        while  x:
-            val, x = x % 10, x // 10
-            count += 1
-            num //= 10
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0: return False
         num, count, n, stack = x, 0, 0, []
         while num:
-    def isPalindrome(self, x: int) -> bool:
-        if x < 0 or x == 1122: return False
-class Solution:
-                stack.append(val)
-            elif val == stack[-1]: 
+            count += 1
+            num //= 10
+        div = 10**(count-1) 
+        while x:
+            val1 = x % 10
+            val2 = x // div
+            if val1 != val2: return False
+            x %= div
+            x //= 10
+            div //= 100
+            print(val1,val2)
+            print('s = ',x,'div = ',div)
+
+        return True
 1
