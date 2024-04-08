@@ -1,10 +1,17 @@
-            j = 0
-            while j < len(st) and st[j] != i:
-                j += 1
-            #print('match = ', j,' at = ' ,st[j])
-            if j > len(st)-1: break
-            elif st[j] == i: 
-                st = st[j+1:] + st[:j]
+class Solution:
+    def countStudents(self, students: List[int], sandwiches: List[int]) -> int:
+        counts = [0, 0]
+        for student in students:
+            counts[student] += 1
+
+        remaining = len(sandwiches)
+        for sandwich in sandwiches:
+            if counts[sandwich] == 0:
+                break
+            if remaining == 0:
+                break
+            counts[sandwich] -= 1
+            remaining -= 1
         
-        return len(st)
-[
+        return remaining
+[1,1,0,0]
