@@ -1,12 +1,13 @@
-class Solution:
-    def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
-        time = 0
-        while tickets[k] > 0:
-            for i in range(len(tickets)):
-                if tickets[i]> 0:
-                    tickets[i] -= 1
-                    time += 1
-                    if tickets[k] == 0: break
-            print(tickets)
-        return time
+            tickets[i] -= (t)
+            if tickets[i] < 0: x += tickets[i]
+        # print(tickets)
+        for i in range(k+1,val):
+        # print(x)
+            if tickets[i] >= 0: x -= 1
+        x =  val*tickets[k]
+
+        for i in range(val):
+        val, t = len(tickets), tickets[k]
+        # print(tickets)
+        return x
 [
