@@ -1,13 +1,12 @@
             tickets[i] -= (t)
             if tickets[i] < 0: x += tickets[i]
-        # print(tickets)
-        for i in range(k+1,val):
-        # print(x)
-            if tickets[i] >= 0: x -= 1
-        x =  val*tickets[k]
+
 
         for i in range(val):
-        val, t = len(tickets), tickets[k]
-        # print(tickets)
+            if i > k and tickets[i] >= 0: x-= 1
         return x
+        x =  val*tickets[k]
+class Solution:
+    def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
+        val, t = len(tickets), tickets[k]
 [
