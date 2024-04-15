@@ -7,9 +7,9 @@
         # return "".join(char for row in zigzag for char in row)
         if numRows == 1 or len(s) < numRows: return s
         r,c,t = 0,0,0
-        ar  = []
-        for _ in s:
-            ar.append([r,c])
+        ar  = [[] for _ in range(numRows)]
+        for i in s:
+            ar[r].append(i)
             if t == 1:
                 r-=1
                 c+=1
@@ -22,11 +22,6 @@
                 t = 1
                 r -= 2
                 c += 1
-        zigzag = [[""] * len(s) for _ in range(numRows)]
-        for r, c in ar:
-            zigzag[r][c] = s[i]
-        i = 0
-            i += 1
-        
-        return "".join(char for row in zigzag for char in row)
+        return ''.join(char for row in ar for char in row)
+        #     print(f"r: {r}, c: {c}")
 "
