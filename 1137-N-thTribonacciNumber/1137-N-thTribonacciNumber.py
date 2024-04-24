@@ -1,23 +1,22 @@
-        # memo[1] = 1
-        # memo[2] = 1
-        # for i in range(3, n+1):
-        #     memo[i] = memo[i-1] + memo[i-2] + memo[i-3]
-        # return memo[n]
+        # Define a helper function for matrix exponentiation
+        def matrix_pow(mat, exp):
+            # Compute mat raised to the power exp using exponentiation by squaring
+            result = [[1, 0, 0],
+                      [0, 1, 0],
+                      [0, 0, 1]]  # Identity matrix
+            base = mat
+            
+            while exp > 0:
+                if exp % 2 == 1:
+                    result = matrix_mult(result, base)
+                base = matrix_mult(base, base)
+                exp //= 2
+            
+            return result
         
-        # # O(1) space, O(n) time
-        if n == 0:
-            return 0
-        m1, m2, m3 = 0, 1, 1
-        for i in range(3, n+1):
-            mN = m1 + m2 + m3
-        # # bottom up dynamic programming
-        if n == 1 or n == 2:
-            return 1
+        # Compute T^n using matrix exponentiation
+        T_n = matrix_pow(T, n - 2)  # T^(n-2) gives us the nth tribonacci number
         
-            m1 = m2
-            m2 = m3
-            m3 = mN
-        return mN
-        #     return n
-        # memo = [0] * (n + 1)
+        # The nth tribonacci number is the top-left element of T^(n-2)
+        return T_n[0][0] + T_n[0][1]  # This is T^(n-2)[0][0] + T^(n-2)[0][1]
 4
