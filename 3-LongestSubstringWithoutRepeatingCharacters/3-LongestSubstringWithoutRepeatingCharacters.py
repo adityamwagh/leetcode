@@ -2,7 +2,7 @@ class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         
         start = 0
-        answer = -float("inf")
+        answer = 0
         
             while s[end] in hset:
                 hset.remove(s[start])
@@ -14,6 +14,6 @@ class Solution:
             
         for end in range(0, len(s)):
         hset = set()
-            
 
-"abcabcbb"
+
+"
