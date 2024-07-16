@@ -1,1 +1,0 @@
-`fast` and `fast.next` should be None.

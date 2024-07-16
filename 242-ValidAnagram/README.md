@@ -1,22 +1,23 @@
-Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+<h2><a href="https://leetcode.com/problems/valid-anagram/">242. Valid Anagram</a></h2><h3>Easy</h3><hr><div><p>Given two strings <code>s</code> and <code>t</code>, return <code>true</code> <em>if</em> <code>t</code> <em>is an anagram of</em> <code>s</code><em>, and</em> <code>false</code> <em>otherwise</em>.</p>
 
-An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+<p>An <strong>Anagram</strong> is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.</p>
 
- 
-Example 1:
-Input: s = "anagram", t = "nagaram"
-Output: true
-Example 2:
-Input: s = "rat", t = "car"
-Output: false
+<p>&nbsp;</p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "anagram", t = "nagaram"
+<strong>Output:</strong> true
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "rat", t = "car"
+<strong>Output:</strong> false
+</pre>
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
- 
-Constraints:
+<ul>
+	<li><code>1 &lt;= s.length, t.length &lt;= 5 * 10<sup>4</sup></code></li>
+	<li><code>s</code> and <code>t</code> consist of lowercase English letters.</li>
+</ul>
 
-
-	1 <= s.length, t.length <= 5 * 104
-	s and t consist of lowercase English letters.
-
-
- 
-Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
+<p>&nbsp;</p>
+<p><strong>Follow up:</strong> What if the inputs contain Unicode characters? How would you adapt your solution to such a case?</p>
+</div>

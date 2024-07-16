@@ -1,2 +1,0 @@
-* **Approach 1** Use hashmap, and store value value along with target - value. Then find the index of the value as the key in hashmap.
-* **Approach 2**: Since the array is sorted, use this to your benefit. Start with a left pointer @ the start and right pointer @ the end. Then compare the sum of elements at pointer l & r, with the target. If less, increment left pointer, if high, decrement right pointer.
