@@ -23,7 +23,7 @@ public:
             auto [node, pathSum] = s.top();
             s.pop();
 
-            if (pathSum == targetSum) return true;
+            if (!node->left && !node->right && pathSum == targetSum) return true;
             if (node->left) s.push({node->left, pathSum + node->left->val});
             if (node->right) s.push({node->right, pathSum + node->right->val});
         }
