@@ -14,11 +14,11 @@ public:
             for (auto i {0}; i < 26; i++) {
                 key += "#" + to_string(counts[i]);
             }
-            amap[key].push_back(str); 
+            amap[key].push_back(move(str)); 
         }
 
         for (const auto& [word, anagrams] : amap) {
-            anagram_list.push_back(anagrams);
+            anagram_list.push_back(move(anagrams));
         }
         return anagram_list;
     }
