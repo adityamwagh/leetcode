@@ -6,7 +6,7 @@ public:
 
         for (const auto& str : strs) {
 
-            vector<int> counts(26, 0);
+            array<int, 26> counts{0};
             for (const auto& c : str) {
                 counts[c - 'a']++;
             }
