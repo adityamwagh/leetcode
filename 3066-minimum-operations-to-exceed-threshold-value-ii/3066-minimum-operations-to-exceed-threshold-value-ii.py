@@ -3,7 +3,7 @@ class Solution:
         
         iters = 0
         heapq.heapify(nums)
-        while (not all(num >= k for num in nums)):
+        while (not nums[0] >= k):
             x = heapq.heappop(nums)
             y = heapq.heappop(nums)
             z = min(x, y) * 2 + max(x, y)
