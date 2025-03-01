@@ -3,15 +3,15 @@ class Solution:
 
         n = len(nums)
         result = []
-        prev= nums[0]
-        for i in range(1,n):
-            if nums[i] == prev and prev!=0:
-                result.append(prev*2)
-                prev=0
+        prev = nums[0]
+        for i in range(1, n):
+            print(f"i {i-1} nums[i].prev {prev} nums[i+1] {nums[i]} result {result}")
+            if nums[i] == prev and prev != 0:
+                result.append(prev * 2)
+                prev = 0
             else:
-                if prev!=0:
+                if prev != 0:
                     result.append(prev)
                 prev = nums[i]
-        if prev!=0:
-            result.append(prev)        
-        return result + [0]*(len(nums)-len(result))
+        result.append(prev)
+        return result + [0] * (len(nums) - len(result))
