@@ -10,17 +10,21 @@ class Solution:
         l = 0
 
         for r in range(len(s2)):
-            # print(l, r, m2)
+            
+            # if we find a char in s2 that's in s1  
+            # then add it to map to compare maps later 
             if s2[r] in m1:
+
                 m2[s2[r]] += 1
-                # print(l, r, m2)
                 if (r - l + 1) == k:
                     if m2 == m1:
                         return True
+
+                    
                     else:
                         m2[s2[l]] -= 1
                         if m2[s2[l]] == 0:
-                            m2.pop(m2[s2[l]])
+                            m2.pop(s2[l])
                         l += 1
             else:
                 l = r + 1
