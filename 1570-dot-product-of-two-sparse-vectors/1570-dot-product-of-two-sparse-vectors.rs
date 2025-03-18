@@ -25,6 +25,7 @@ impl SparseVector {
         if self.sparse_nums.is_empty() || vec.sparse_nums.is_empty() {
             return 0;
         }
+        
         let mut i = 0;
         let mut j = 0;
         let mut product = 0;
