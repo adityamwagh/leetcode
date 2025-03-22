@@ -2,25 +2,21 @@ class MovingAverage:
 
     def __init__(self, size: int):
         
-        self.data = []
+        self.data = deque()
         self.size = size
-        self.curr_size = 0
+        self.window_sum = 0
 
     def next(self, val: int) -> float:
         
         self.data.append(val)
-        self.curr_size += 1
-        total = 0
-        average = 0
-        if self.curr_size < self.size:
-            for i in range(1, self.curr_size + 1):
-                total += self.data[-i]
-            average = total / self.curr_size
-        else:
-            for i in range(1, self.size + 1):
-                total += self.data[-i]
-            average = total / self.size
-        return average
+        self.window_sum += val
+        
+        if len(self.data) > self.size:
+            self.window_sum -= self.data.popleft()
+        
+        return self.window_sum / len(self.data)
+
+
 
     
 
