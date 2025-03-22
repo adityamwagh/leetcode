@@ -1,11 +1,21 @@
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
-        # Use zip to pair characters from both words
-        merged = ''.join(a + b for a, b in zip(word1, word2))
+        len1, len2 = len(word1), len(word2)
+        min_len = min(len1, len2)
         
-        # Add any remaining characters from the longer word
-        # This works because slicing with an index >= len(string) returns an empty string
-        remaining_length = max(len(word1), len(word2))
-        merged += word1[len(word2):] + word2[len(word1):]
+        # Pre-allocate a list with the exact final size needed
+        result = [''] * (len1 + len2)
         
-        return merged
+        # Fill alternating positions (faster than concatenation)
+        for i in range(min_len):
+            result[i*2] = word1[i]
+            result[i*2+1] = word2[i]
+        
+        # Handle remaining characters in a single operation (if any)
+        if len1 > min_len:
+            result[min_len*2:] = word1[min_len:]
+        elif len2 > min_len:
+            result[min_len*2:] = word2[min_len:]
+        
+        # Join once at the end (much faster than repeated concatenation)
+        return ''.join(result)
