@@ -9,5 +9,20 @@ class Solution:
         
         if not root:
             return 0
+            
+        stack = []
+        max_depth = 0
+        stack.append((root, 1))
+
+        while stack:
+
+            curr, curr_depth = stack.pop()
+            max_depth = max(max_depth, curr_depth)
+
+            if curr.left:
+                stack.append((curr.left, curr_depth + 1))
+            if curr.right:
+                stack.append((curr.right, curr_depth + 1))
         
-        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+        return max_depth
+            
