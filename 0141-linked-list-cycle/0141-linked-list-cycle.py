@@ -6,10 +6,13 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        
+        # T: O(n) S: O(1)
+        # Slow pinter and fast pointer will meet when there is a cycle
+        # No need to check slow going out of bounds because fast will go
+        # out of bounds first
         slow, fast = head, head
 
-        while fast and fast.next and slow:
+        while fast and fast.next:
 
             fast = fast.next.next
             slow = slow.next
